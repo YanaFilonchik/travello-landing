@@ -1,0 +1,368 @@
+@mixin text($s, $w, $c, $ff) {
+    font-size: $s;
+    font-weight: $w;
+    color: $c;
+    font-family: $ff;
+}
+
+@mixin flex($gap, $jc: start, $ai: start, $fd: row) {
+    display: flex;
+    gap: $gap;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+    div {
+        max-width: 1568px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px 0 15px;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 82px;
+
+            .btn-sing-up {
+                width: 135px;
+                height: 53px;
+                border-radius: 6.65px;
+                border: 1.33px solid #212832;
+                background-color: transparent;
+            }
+
+            .language {
+                background-color: transparent;
+                border-width: 0;
+                display: flex;
+                gap: 12px;
+                align-items: baseline;
+
+                img {
+                    width: 12px;
+                    height: 6px;
+                }
+            }
+        }
+    }
+}
+
+.preview {
+    width: 100%;
+
+    .content {
+        max-width: 1568px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 88px;
+        gap: 103px;
+
+
+        .content-left {
+            max-width: 728px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            justify-content: center;
+
+            h5 {
+                font: 700 27px Poppins;
+                text-transform: uppercase;
+                color: #DF6951;
+            }
+
+            h1 {
+                font: 700 112px Volkhov;
+                line-height: 118.38px;
+                letter-spacing: -5px;
+                color: #181E4B;
+            }
+
+            p {
+                font: 500 22px Poppins;
+                line-height: 39.9px;
+                color: #5E6282;
+            }
+
+            div {
+                display: flex;
+                gap: 59px;
+
+                button:first-child {
+                    font: 500 24px Google Sans;
+                    color: #fff;
+                    text-align: center;
+                    width: 226px;
+                    height: 80px;
+                    border-radius: 13.3px;
+                    background-color: #f1a501e7;
+                    box-shadow: 0px 26.6px 46.55px 0px #F1A50126;
+                    border-width: 0;
+                }
+
+                button:last-child {
+                    font: 500 23px Poppins;
+                    color: #686D77;
+                    height: 80px;
+                    justify-content: center;
+                    border-width: 0;
+                    background-color: transparent;
+                    display: flex;
+                    gap: 27px;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    div {
+                        border-radius: 50px;
+                        background-color: #DF6951;
+                        width: 69px;
+                        height: 69px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow: 0px 19.95px 39.9px 0px #DF69514D;
+                    }
+                }
+            }
+        }
+
+        & .img {
+            max-width: 740px;
+            max-height: 913px;
+            object-fit: cover;
+        }
+    }
+}
+
+.caterory {
+    max-width: 1568px;
+    margin: auto;
+    width: 100%;
+    padding-top: 173px;
+
+    h5 {
+        font: 600 24px Poppins;
+        text-align: center;
+        color: #5E6282;
+    }
+
+    p {
+        font: 700 66px Volkhov;
+        text-align: center;
+        text-transform: capitalize;
+        color: #14183E;
+    }
+
+    .contener {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 93px;
+        padding-bottom: 100px;
+
+        .blok {
+            width: 252px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 39px;
+            border-radius: 47.88px;
+
+            p:nth-child(2) {
+                font: 600 27px Open Sans;
+                color: #1E1D4C;
+            }
+
+            p:last-child {
+                font: 500 21px Poppins;
+                line-height: 34.58px;
+                text-align: center;
+            }
+
+            &:hover {
+                // box-shadow: 0px 2.46px 4.19px 0px #00000001;
+
+                /*                 box-shadow: 0px 10.84px 8.67px 0px #00000002;
+
+                box-shadow: 0px 26.6px 17.29px 0px #00000003;
+
+                box-shadow: 0px 51.23px 33.89px 0px #00000003; */
+
+                // box-shadow: 0px 86.21px 62.32px 0px #00000004;
+
+                box-shadow: 0px 133.01px 106.41px 0px #00000015;
+
+            }
+        }
+
+    }
+
+}
+
+.top-selling {
+    max-width: 1568px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+
+    h5 {
+        @include text(24px, 600, #5E6282, Poppins);
+    }
+
+    p {
+        @include text(66px, 700, #1E1D4C, Volkhov);
+        text-transform: capitalize;
+    }
+
+    .content {
+        @include flex(69px, space-around, center);
+        padding: 81px 0;
+
+        .slider {
+            @include flex(35px, space-between, center, column);
+            //width: 419px;
+            border-bottom-right-radius: 31.92px;
+            border-bottom-left-radius: 31.92px;
+            // padding: 0 10px;
+
+            img {
+                width: 421px;
+                height: 454px;
+                border-top-left-radius: 31.92px;
+                border-top-right-radius: 31.92px;
+            }
+
+            .text {
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+                // padding: 0 20px;
+
+                p {
+                    @include text(24px, 500, #5E6282, Poppins);
+                    line-height: 125%;
+                }
+            }
+
+            .positon {
+                display: flex;
+                gap: 19px;
+                width: 90%;
+                padding-bottom: 56px;
+                // padding: 0 20px 56px 20px;
+
+                img {
+                    width: 27px;
+                    height: 27px;
+                }
+
+                p {
+                    @include text(21.28px, 700, #5E6282, Poppins);
+                    line-height: 125%;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0px 133.01px 106.41px 0px #00000015;
+            }
+        }
+
+    }
+}
+
+.book-trip {
+    max-width: 1568px;
+    margin: auto;
+    width: 100%;
+    @include flex(0, space-between, center);
+
+    .blok-left {
+
+        h5 {
+            @include text(24px, 600, #5E6282, Poppins);
+        }
+
+        .left-p {
+            @include text(66px, 700, #1E1D4C, Volkhov);
+            text-transform: capitalize;
+            padding: 19px 0 42px 0;
+        }
+
+        .contener {
+            width: 525px;
+            @include flex(65px, start, start, column);
+
+            div {
+                display: flex;
+                gap: 28px;
+
+                p {
+                    @include text(21.28px, 700, #5E6282, Poppins);
+                    line-height: 125%;
+
+                    span {
+                        @include text(21.28px, 400, #5E6282, Poppins);
+                        line-height: 125%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.testimonials {
+    max-width: 1568px;
+    margin: auto;
+    width: 100%;
+    @include flex(0, space-between, );
+
+    .blok-left {
+        max-width: 577px;
+
+        h5 {
+            @include text(24px, 600, #5E6282, Poppins);
+            text-transform: uppercase;
+        }
+
+        p {
+            @include text(66px, 700, #1E1D4C, Volkhov);
+        }
+    }
+
+    .blok-right{
+        max-width: 725px;
+    }
+}
+
+
+@media (max-width: 1350px) {
+    .preview .content .img {
+        max-width: 500px;
+        max-height: 700px;
+        object-fit: cover;
+    }
+
+    .preview .content .content-left h1 {
+        font-size: 85px;
+        line-height: 120%;
+    }
+}
+
+@media (max-width: 1000px) {}
